@@ -1,0 +1,10 @@
+.hljs {
+  padding: 1em;
+}
+
+.post-preview .post-meta {
+  font-size: 1.125rem;
+  font-style: italic;
+  margin-top: 0;
+  color: #6c757d;
+}
