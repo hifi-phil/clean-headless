@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Lora, Open_Sans } from "next/font/google";
 import "startbootstrap-clean-blog/dist/css/styles.css";
 import "../../node_modules/highlight.js/styles/vs2015.css";
 import "./globals.css";
@@ -8,12 +9,17 @@ import { getDictionaryItems } from "@/helpers/dictionary";
 import { getPage } from "@/umbraco";
 import { HomeContentResponseModel } from "@/api/model";
 
-// Note: Google Fonts (Lora, Open_Sans) were removed due to build environment network restrictions
-// To restore Google Fonts in a production environment with network access:
-// import { Lora, Open_Sans } from "next/font/google";
-// const lora = Lora({ subsets: ['latin'], weight: ['400', '700'], style: ['normal', 'italic'] });
-// const openSans = Open_Sans({ subsets: ['latin'], weight: ['300', '400', '600', '700', '800'], style: ['normal', 'italic'] });
-// Then add ${lora.className} ${openSans.className} to the body className below
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+});
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '600', '700', '800'],
+  style: ['normal', 'italic'],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -35,7 +41,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      <body className={`${lora.className} ${openSans.className}`}>
         <MainNavigation dictionary={dictionaryItems} homePage={homePage}/>
         {children}
         <Footer dictionary={dictionaryItems} homePage={homePage}/>
