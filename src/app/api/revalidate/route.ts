@@ -42,8 +42,8 @@ export async function POST(request: NextRequest) {
       console.log(`revalidated layout navigation`)
     }
 
-    if(updateNavigation) {
-      revalidateTag('navigation')
+    if(updateLocalisation) {
+      revalidateTag('localisation')
       console.log(`revalidated localisation`)
     }
 
