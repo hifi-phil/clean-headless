@@ -33,6 +33,7 @@ export async function POST(request: NextRequest) {
         let url = removeLastSlash(contentPath)
         if(url === '') url = '/';
         revalidatePath(url);
+        revalidateTag('navigation');
         console.log(`revalidated content path ${url}`)
     }
 
