@@ -12,7 +12,7 @@ export const getDictionValue = (
 
 export const getDictionaryItems = async (): Promise<TranslationModel[]> => {
   try {
-    const response = await getApiV1DictionaryGetdictionarytranslations();
+    const response = await getApiV1DictionaryGetdictionarytranslations({ next: { tags: ['localisation'] } } as unknown as RequestInit);
 
     if (response.status !== 200) {
       throw new Error(`HTTP error! Status: ${response.status}`);

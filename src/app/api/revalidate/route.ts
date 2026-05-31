@@ -27,24 +27,34 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    const { contentPath, updateNavigation, updateLocalisation } = JSON.parse(text) as RevalidatePayload;
+   const { contentPath, updateArticles, updateNavigation, updateLocalisation, isTrashed, isDeleted, isUnpublished } = JSON.parse(text) as RevalidatePayload;
 
     if(contentPath) {
         let url = removeLastSlash(contentPath)
         if(url === '') url = '/';
         revalidatePath(url);
-        revalidateTag('navigation')
+        revalidateTag('navigation');
         console.log(`revalidated content path ${url}`)
     }
-    
+
+    if(updateArticles) {
+        revalidateTag('articles')
+        console.log(`revalidated articles tag`)
+    }
+
     if(updateNavigation) {
       revalidateTag('navigation')
       console.log(`revalidated layout navigation`)
     }
 
-    if(updateNavigation) {
-      revalidateTag('navigation')
+    if(updateLocalisation) {
+      revalidateTag('localisation')
       console.log(`revalidated localisation`)
+    }
+
+    if(isTrashed || isDeleted || isUnpublished) {
+        revalidatePath('/', 'layout');
+        console.log(`purged entire cache`)
     }
 
   } catch (error : any) {
@@ -61,8 +71,12 @@ export async function POST(request: NextRequest) {
 
 interface RevalidatePayload {
     contentPath: string,
+    updateArticles: boolean,
     updateNavigation: boolean,
-    updateLocalisation: boolean
+    updateLocalisation: boolean,
+    isTrashed: boolean,
+    isDeleted: boolean,
+    isUnpublished: boolean,
 }
 
 function removeLastSlash(url: string): string {
