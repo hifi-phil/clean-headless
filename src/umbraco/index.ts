@@ -3,7 +3,7 @@ import { ArticleContentResponseModel, AuthorContentResponseModel, ContentContent
 
 export async function getPage<T>(handle: string): Promise<T | undefined> {
 
-  const response = await getContentItemByPath20(handle, {}, {});
+  const response = await getContentItemByPath20(handle, { expand: "properties[contentRows[properties[image,images]]]" }, {});
 
   if(response.status === 200) {
 
