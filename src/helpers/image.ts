@@ -9,6 +9,7 @@ export const ImageMap = (source?: IApiMediaWithCropsModel | null): Image | undef
     if (!source) return undefined;
     return {
       src: source.url,
+      alt: (source.properties?.altText as string) || source.name || undefined,
     }
   }
 
