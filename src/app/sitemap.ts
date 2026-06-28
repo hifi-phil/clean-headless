@@ -5,7 +5,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const items : MetadataRoute.Sitemap = [];
 
-  const domain = "http://localhost:23142";
+  const domain = process.env.NEXT_PUBLIC_UMBRACO_BASE_URL ?? "http://localhost:23142";
 
   items.push({
     url: domain,

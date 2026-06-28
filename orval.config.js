@@ -1,6 +1,8 @@
 require('dotenv').config({ path: '.env.local' });
 
-const baseUrl = process.env.NEXT_PUBLIC_UMBRACO_BASE_URL ?? 'http://localhost:23142';
+// Set NEXT_PUBLIC_UMBRACO_BASE_URL in .env.local to point at your Umbraco 18 instance.
+// The fallback below is only used when that env var is not set.
+const baseUrl = process.env.NEXT_PUBLIC_UMBRACO_BASE_URL ?? 'https://localhost:44339';
 
 module.exports = {
   'umbraco-transfomer': {
@@ -18,7 +20,10 @@ module.exports = {
       },
     },
     input: {
-      target: `${baseUrl}/umbraco/swagger/delivery/swagger.json`,
+      // Umbraco 18 moved the OpenAPI document from
+      // /umbraco/swagger/{documentName}/swagger.json to
+      // /umbraco/openapi/{documentName}.json (now OpenAPI 3.1).
+      target: `${baseUrl}/umbraco/openapi/delivery.json`,
     },
   },
   //this won't run whilst the umbraco ommunity poackage is present
@@ -37,10 +42,21 @@ module.exports = {
       },
     },
     input: {
-      target: `${baseUrl}/umbraco/swagger/engage-api/swagger.json?urls.primaryName=Umbraco+Engage+API`,
+      target: `${baseUrl}/umbraco/openapi/engage-api.json`,
     },
   },*/
-  'clean-starter-transfomer': {
+  // The Clean Starter Kit custom API (search / dictionary / contact).
+  //
+  // DISABLED on Umbraco 18: the /umbraco/openapi/clean-starter.json document is
+  // emitted with an empty "paths" object, so regenerating from it would wipe the
+  // working client. Root cause is server-side in the Clean.Headless package: its
+  // controllers declare [ApiExplorerSettings(GroupName = "Search"/"Translation"/
+  // "Contact")] which, under Umbraco 18's Microsoft.AspNetCore.OpenApi (Swashbuckle
+  // was removed), no longer matches the "clean-starter" document and excludes every
+  // operation. The committed src/api-clean clients are kept as-is — the underlying
+  // /api/v1/* endpoints are unchanged and work at runtime. Re-enable this block once
+  // the Clean.Headless OpenAPI document includes its operations again.
+  /*'clean-starter-transfomer': {
     output: {
       mode: 'tags-split',
       target: './src/api-clean/client.ts',
@@ -55,7 +71,7 @@ module.exports = {
       },
     },
     input: {
-      target: `${baseUrl}/umbraco/swagger/clean-starter/swagger.json?urls.primaryName=Clean+starter+kit`,
+      target: `${baseUrl}/umbraco/openapi/clean-starter.json`,
     },
-  }
+  }*/
 };
