@@ -13,6 +13,7 @@ Then you will need to add an env.local file that looks like this. Remember to ch
 
 ```
 NEXT_PUBLIC_UMBRACO_BASE_URL=http://localhost:8888
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 UMBRACO_REVALIDATE_SECRET='SOMETHING_SECRET'
 UMBRACO_REVALIDATE_ACCESS_CONTROL_ORIGIN="*"
 ```
