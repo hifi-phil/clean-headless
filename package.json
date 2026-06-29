@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "generate": "node ./node_modules/orval/dist/bin/orval.js"
+    "generate": "node ./node_modules/orval/dist/bin/orval.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -28,7 +28,7 @@
     "@types/react-dom": "^19.2.3",
     "@types/react-highlight": "^0.12.8",
     "dotenv": "^17.4.2",
-    "orval": "^7.21.0",
+    "orval": "^8.19.0",
     "typescript": "^5"
   }
 }
