@@ -5,10 +5,10 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { IApiContentResponseModelBase } from './iApiContentResponseModelBase';
+import type { IApiContentResponseBaseModel } from './iApiContentResponseBaseModel';
 import type { VisibilityControlsContentModel } from './visibilityControlsContentModel';
 import type { VisibilityControlsContentResponseModelContentType } from './visibilityControlsContentResponseModelContentType';
 
-export type VisibilityControlsContentResponseModel = Omit<IApiContentResponseModelBase & VisibilityControlsContentModel, 'contentType'> & {
+export type VisibilityControlsContentResponseModel = IApiContentResponseBaseModel & VisibilityControlsContentModel & {
   contentType: VisibilityControlsContentResponseModelContentType;
 };

@@ -1,4 +1,4 @@
-import { ApiLinkModel, LinkTypeModel, IApiMediaWithCropsModel, SpacingPropertiesPropertiesModel, IApiElementModel } from "../api/model";
+import { ApiLinkModel, LinkTypeModel } from "../api/model";
 
 export interface Link {
   href?: string,

@@ -6,10 +6,10 @@
  * OpenAPI spec version: Latest
  */
 import type { ContactContentModelContentType } from './contactContentModelContentType';
-import type { ContactPropertiesModel } from './contactPropertiesModel';
-import type { IApiContentModelBase } from './iApiContentModelBase';
+import type { ContactContentPropertiesModel } from './contactContentPropertiesModel';
+import type { IApiContentBaseModel } from './iApiContentBaseModel';
 
-export type ContactContentModel = Omit<IApiContentModelBase, 'contentType'> & {
-  properties?: ContactPropertiesModel;
+export type ContactContentModel = IApiContentBaseModel & {
   contentType: ContactContentModelContentType;
+  properties?: ContactContentPropertiesModel;
 };

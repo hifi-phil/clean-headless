@@ -8,11 +8,11 @@ export interface Image {
 export const ImageMap = (source?: IApiMediaWithCropsModel | null): Image | undefined => {
     if (!source) return undefined;
     return {
-      src: source.url,
+      src: source.url  || undefined,
       alt: (source.properties?.altText as string) || source.name || undefined,
     }
   }
-
+  
 export const ImagesToImageMap = (source?: IApiMediaWithCropsModel[] | null): Image | undefined => {
     if (source == null || source.length === 0 || source === undefined) {
       return undefined;

@@ -7,8 +7,8 @@
  */
 import type { HomeContentModel } from './homeContentModel';
 import type { HomeContentResponseModelContentType } from './homeContentResponseModelContentType';
-import type { IApiContentResponseModelBase } from './iApiContentResponseModelBase';
+import type { IApiContentResponseBaseModel } from './iApiContentResponseBaseModel';
 
-export type HomeContentResponseModel = Omit<IApiContentResponseModelBase & HomeContentModel, 'contentType'> & {
+export type HomeContentResponseModel = IApiContentResponseBaseModel & HomeContentModel & {
   contentType: HomeContentResponseModelContentType;
 };

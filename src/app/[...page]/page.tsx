@@ -1,4 +1,4 @@
-import { ContentContentResponseModel, SEocontrolsContentResponseModel } from "@/api/model";
+import { ContentContentResponseModel, SEOControlsContentResponseModel } from "@/api/model";
 import { PageHeader } from "@/components/partials/pageHeader";
 import { getMeta } from "@/helpers/metaHelper";
 import { getContentPages, getPage } from "@/umbraco";
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ page: string[] }> }) : Promise<Metadata> {
 
   const { page } = await params;
-  const metaContent = await getPage<SEocontrolsContentResponseModel>(`/${page.join('/')}/`);
+  const metaContent = await getPage<SEOControlsContentResponseModel>(`/${page.join('/')}/`);
 
   if (!metaContent) return notFound();
 

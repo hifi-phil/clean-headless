@@ -7,9 +7,7 @@
  */
 
 export * from './emailForm';
-export * from './eventMessageTypeModel';
 export * from './getApiV1SearchGetSearchResultsParams';
-export * from './notificationHeaderModel';
 export * from './searchResultsItemModel';
 export * from './searchResultsModel';
 export * from './translationModel';

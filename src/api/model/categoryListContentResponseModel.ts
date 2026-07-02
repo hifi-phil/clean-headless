@@ -7,8 +7,8 @@
  */
 import type { CategoryListContentModel } from './categoryListContentModel';
 import type { CategoryListContentResponseModelContentType } from './categoryListContentResponseModelContentType';
-import type { IApiContentResponseModelBase } from './iApiContentResponseModelBase';
+import type { IApiContentResponseBaseModel } from './iApiContentResponseBaseModel';
 
-export type CategoryListContentResponseModel = Omit<IApiContentResponseModelBase & CategoryListContentModel, 'contentType'> & {
+export type CategoryListContentResponseModel = IApiContentResponseBaseModel & CategoryListContentModel & {
   contentType: CategoryListContentResponseModelContentType;
 };

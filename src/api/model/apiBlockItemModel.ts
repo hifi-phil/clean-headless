@@ -9,5 +9,5 @@ import type { IApiElementModel } from './iApiElementModel';
 
 export interface ApiBlockItemModel {
   content: IApiElementModel;
-  settings?: IApiElementModel;
+  settings: IApiElementModel;
 }

@@ -5,10 +5,10 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { IApiContentResponseModelBase } from './iApiContentResponseModelBase';
-import type { XMlsitemapContentModel } from './xMlsitemapContentModel';
-import type { XMlsitemapContentResponseModelContentType } from './xMlsitemapContentResponseModelContentType';
+import type { IApiContentResponseBaseModel } from './iApiContentResponseBaseModel';
+import type { XMLSitemapContentModel } from './xMLSitemapContentModel';
+import type { XMLSitemapContentResponseModelContentType } from './xMLSitemapContentResponseModelContentType';
 
-export type XMlsitemapContentResponseModel = Omit<IApiContentResponseModelBase & XMlsitemapContentModel, 'contentType'> & {
-  contentType: XMlsitemapContentResponseModelContentType;
+export type XMLSitemapContentResponseModel = IApiContentResponseBaseModel & XMLSitemapContentModel & {
+  contentType: XMLSitemapContentResponseModelContentType;
 };

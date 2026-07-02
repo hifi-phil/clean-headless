@@ -10,7 +10,6 @@ import type {
   GetContentItemById20Params,
   GetContentItemByPath20Params,
   GetContentItems20Params,
-  HttpValidationProblemDetails,
   IApiContentResponseModel,
   PagedIApiContentResponseModel,
   ProblemDetails
@@ -24,7 +23,7 @@ export type getContent20Response200 = {
 }
 
 export type getContent20Response400 = {
-  data: ProblemDetails | HttpValidationProblemDetails
+  data: ProblemDetails
   status: 400
 }
 
@@ -54,70 +53,12 @@ export const getGetContent20Url = (params?: GetContent20Params,) => {
 
   const stringifiedParams = normalizedParams.toString();
 
-  return stringifiedParams.length > 0 ? `http://localhost:43343/umbraco/delivery/api/v2/content?${stringifiedParams}` : `http://localhost:43343/umbraco/delivery/api/v2/content`
+  return stringifiedParams.length > 0 ? `http://localhost:38357/umbraco/delivery/api/v2/content?${stringifiedParams}` : `http://localhost:38357/umbraco/delivery/api/v2/content`
 }
 
 export const getContent20 = async (params?: GetContent20Params, options?: RequestInit): Promise<getContent20Response> => {
 
   return customFetch<getContent20Response>(getGetContent20Url(params),
-  {
-    ...options,
-    method: 'GET'
-
-
-  }
-);}
-
-
-export type getContentItemByPath20Response200 = {
-  data: IApiContentResponseModel
-  status: 200
-}
-
-export type getContentItemByPath20Response401 = {
-  data: void
-  status: 401
-}
-
-export type getContentItemByPath20Response403 = {
-  data: void
-  status: 403
-}
-
-export type getContentItemByPath20Response404 = {
-  data: void
-  status: 404
-}
-
-export type getContentItemByPath20ResponseSuccess = (getContentItemByPath20Response200) & {
-  headers: Headers;
-};
-export type getContentItemByPath20ResponseError = (getContentItemByPath20Response401 | getContentItemByPath20Response403 | getContentItemByPath20Response404) & {
-  headers: Headers;
-};
-
-export type getContentItemByPath20Response = (getContentItemByPath20ResponseSuccess | getContentItemByPath20ResponseError)
-
-export const getGetContentItemByPath20Url = (path: string,
-    params?: GetContentItemByPath20Params,) => {
-  const normalizedParams = new URLSearchParams();
-
-  Object.entries(params || {}).forEach(([key, value]) => {
-
-    if (value !== undefined) {
-      normalizedParams.append(key, value === null ? 'null' : String(value))
-    }
-  });
-
-  const stringifiedParams = normalizedParams.toString();
-
-  return stringifiedParams.length > 0 ? `http://localhost:43343/umbraco/delivery/api/v2/content/item/${path}?${stringifiedParams}` : `http://localhost:43343/umbraco/delivery/api/v2/content/item/${path}`
-}
-
-export const getContentItemByPath20 = async (path: string,
-    params?: GetContentItemByPath20Params, options?: RequestInit): Promise<getContentItemByPath20Response> => {
-
-  return customFetch<getContentItemByPath20Response>(getGetContentItemByPath20Url(path,params),
   {
     ...options,
     method: 'GET'
@@ -169,13 +110,71 @@ export const getGetContentItemById20Url = (id: string,
 
   const stringifiedParams = normalizedParams.toString();
 
-  return stringifiedParams.length > 0 ? `http://localhost:43343/umbraco/delivery/api/v2/content/item/${id}?${stringifiedParams}` : `http://localhost:43343/umbraco/delivery/api/v2/content/item/${id}`
+  return stringifiedParams.length > 0 ? `http://localhost:38357/umbraco/delivery/api/v2/content/item/${id}?${stringifiedParams}` : `http://localhost:38357/umbraco/delivery/api/v2/content/item/${id}`
 }
 
 export const getContentItemById20 = async (id: string,
     params?: GetContentItemById20Params, options?: RequestInit): Promise<getContentItemById20Response> => {
 
   return customFetch<getContentItemById20Response>(getGetContentItemById20Url(id,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type getContentItemByPath20Response200 = {
+  data: IApiContentResponseModel
+  status: 200
+}
+
+export type getContentItemByPath20Response401 = {
+  data: void
+  status: 401
+}
+
+export type getContentItemByPath20Response403 = {
+  data: void
+  status: 403
+}
+
+export type getContentItemByPath20Response404 = {
+  data: void
+  status: 404
+}
+
+export type getContentItemByPath20ResponseSuccess = (getContentItemByPath20Response200) & {
+  headers: Headers;
+};
+export type getContentItemByPath20ResponseError = (getContentItemByPath20Response401 | getContentItemByPath20Response403 | getContentItemByPath20Response404) & {
+  headers: Headers;
+};
+
+export type getContentItemByPath20Response = (getContentItemByPath20ResponseSuccess | getContentItemByPath20ResponseError)
+
+export const getGetContentItemByPath20Url = (path: string,
+    params?: GetContentItemByPath20Params,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `http://localhost:38357/umbraco/delivery/api/v2/content/item/${path}?${stringifiedParams}` : `http://localhost:38357/umbraco/delivery/api/v2/content/item/${path}`
+}
+
+export const getContentItemByPath20 = async (path: string,
+    params?: GetContentItemByPath20Params, options?: RequestInit): Promise<getContentItemByPath20Response> => {
+
+  return customFetch<getContentItemByPath20Response>(getGetContentItemByPath20Url(path,params),
   {
     ...options,
     method: 'GET'
@@ -221,7 +220,7 @@ export const getGetContentItems20Url = (params?: GetContentItems20Params,) => {
 
   const stringifiedParams = normalizedParams.toString();
 
-  return stringifiedParams.length > 0 ? `http://localhost:43343/umbraco/delivery/api/v2/content/items?${stringifiedParams}` : `http://localhost:43343/umbraco/delivery/api/v2/content/items`
+  return stringifiedParams.length > 0 ? `http://localhost:38357/umbraco/delivery/api/v2/content/items?${stringifiedParams}` : `http://localhost:38357/umbraco/delivery/api/v2/content/items`
 }
 
 export const getContentItems20 = async (params?: GetContentItems20Params, options?: RequestInit): Promise<getContentItems20Response> => {

@@ -9,8 +9,8 @@ import type { ImageCropCoordinatesModel } from './imageCropCoordinatesModel';
 
 export interface ImageCropModel {
   /** @nullable */
-  alias?: string | null;
+  alias: string | null;
   width: number;
   height: number;
-  coordinates?: ImageCropCoordinatesModel;
+  coordinates: ImageCropCoordinatesModel;
 }

@@ -18,7 +18,7 @@ module.exports = {
       },
     },
     input: {
-      target: `${baseUrl}/umbraco/swagger/delivery/swagger.json`,
+      target: `${baseUrl}/umbraco/openapi/delivery.json`,
     },
   },
   'clean-starter-transfomer': {
@@ -36,7 +36,7 @@ module.exports = {
       },
     },
     input: {
-      target: `${baseUrl}/umbraco/swagger/clean-starter/swagger.json?urls.primaryName=Clean+starter+kit`,
+      target: `${baseUrl}/umbraco/openapi/clean-starter.json?urls.primaryName=Clean+starter+kit`,
     },
   }
 };

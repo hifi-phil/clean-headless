@@ -5,11 +5,11 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { IApiElementModelBase } from './iApiElementModelBase';
+import type { IApiElementBaseModel } from './iApiElementBaseModel';
 import type { RichTextRowElementModelContentType } from './richTextRowElementModelContentType';
-import type { RichTextRowPropertiesModel } from './richTextRowPropertiesModel';
+import type { RichTextRowElementPropertiesModel } from './richTextRowElementPropertiesModel';
 
-export type RichTextRowElementModel = Omit<IApiElementModelBase, 'contentType'> & {
-  properties?: RichTextRowPropertiesModel;
+export type RichTextRowElementModel = IApiElementBaseModel & {
   contentType: RichTextRowElementModelContentType;
+  properties?: RichTextRowElementPropertiesModel;
 };

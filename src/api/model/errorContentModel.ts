@@ -6,10 +6,10 @@
  * OpenAPI spec version: Latest
  */
 import type { ErrorContentModelContentType } from './errorContentModelContentType';
-import type { ErrorPropertiesModel } from './errorPropertiesModel';
-import type { IApiContentModelBase } from './iApiContentModelBase';
+import type { ErrorContentPropertiesModel } from './errorContentPropertiesModel';
+import type { IApiContentBaseModel } from './iApiContentBaseModel';
 
-export type ErrorContentModel = Omit<IApiContentModelBase, 'contentType'> & {
-  properties?: ErrorPropertiesModel;
+export type ErrorContentModel = IApiContentBaseModel & {
   contentType: ErrorContentModelContentType;
+  properties?: ErrorContentPropertiesModel;
 };

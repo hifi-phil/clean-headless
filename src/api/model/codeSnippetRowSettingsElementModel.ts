@@ -6,10 +6,10 @@
  * OpenAPI spec version: Latest
  */
 import type { CodeSnippetRowSettingsElementModelContentType } from './codeSnippetRowSettingsElementModelContentType';
-import type { CodeSnippetRowSettingsPropertiesModel } from './codeSnippetRowSettingsPropertiesModel';
-import type { IApiElementModelBase } from './iApiElementModelBase';
+import type { CodeSnippetRowSettingsElementPropertiesModel } from './codeSnippetRowSettingsElementPropertiesModel';
+import type { IApiElementBaseModel } from './iApiElementBaseModel';
 
-export type CodeSnippetRowSettingsElementModel = Omit<IApiElementModelBase, 'contentType'> & {
-  properties?: CodeSnippetRowSettingsPropertiesModel;
+export type CodeSnippetRowSettingsElementModel = IApiElementBaseModel & {
   contentType: CodeSnippetRowSettingsElementModelContentType;
+  properties?: CodeSnippetRowSettingsElementPropertiesModel;
 };

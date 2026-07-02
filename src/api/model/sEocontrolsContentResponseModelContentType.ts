@@ -6,9 +6,9 @@
  * OpenAPI spec version: Latest
  */
 
-export type SEocontrolsContentResponseModelContentType = typeof SEocontrolsContentResponseModelContentType[keyof typeof SEocontrolsContentResponseModelContentType];
+export type SEOControlsContentResponseModelContentType = typeof SEOControlsContentResponseModelContentType[keyof typeof SEOControlsContentResponseModelContentType];
 
 
-export const SEocontrolsContentResponseModelContentType = {
+export const SEOControlsContentResponseModelContentType = {
   sEOControls: 'sEOControls',
 } as const;

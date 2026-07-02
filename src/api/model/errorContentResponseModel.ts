@@ -7,8 +7,8 @@
  */
 import type { ErrorContentModel } from './errorContentModel';
 import type { ErrorContentResponseModelContentType } from './errorContentResponseModelContentType';
-import type { IApiContentResponseModelBase } from './iApiContentResponseModelBase';
+import type { IApiContentResponseBaseModel } from './iApiContentResponseBaseModel';
 
-export type ErrorContentResponseModel = Omit<IApiContentResponseModelBase & ErrorContentModel, 'contentType'> & {
+export type ErrorContentResponseModel = IApiContentResponseBaseModel & ErrorContentModel & {
   contentType: ErrorContentResponseModelContentType;
 };

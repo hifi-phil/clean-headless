@@ -8,7 +8,10 @@
 import type { SearchResultsItemModel } from './searchResultsItemModel';
 
 export interface SearchResultsModel {
-  /** @nullable */
-  count?: number | null;
-  items: SearchResultsItemModel[];
+  /**
+     * @nullable
+     * @pattern ^-?(?:0|[1-9]\d*)$
+     */
+  count?: number | string | null;
+  items?: SearchResultsItemModel[];
 }

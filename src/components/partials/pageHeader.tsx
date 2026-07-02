@@ -1,4 +1,4 @@
-import { ArticleControlsPropertiesModel, HeaderControlsPropertiesModel, IApiContentResponseModel, MainImageControlsPropertiesModel } from "@/api/model"
+import { ArticleControlsContentPropertiesModel, CategoryElementElementModel, HeaderControlsContentPropertiesModel, IApiContentResponseModel, MainImageControlsContentPropertiesModel } from "@/api/model"
 import { getDictionaryItems, getDictionValue } from "@/helpers/dictionary";
 import { ImagesToImageMap } from "@/helpers/image";
 import React from "react";
@@ -7,11 +7,11 @@ export const PageHeader = async (props: { content: IApiContentResponseModel, isA
 
     const dictionary = await getDictionaryItems();
     
-    const mainImageControls : MainImageControlsPropertiesModel  = props.content.properties as MainImageControlsPropertiesModel;
+    const mainImageControls : MainImageControlsContentPropertiesModel  = props.content.properties as MainImageControlsContentPropertiesModel;
     const mainBackgroundImage = mainImageControls?.mainImage ? ImagesToImageMap(mainImageControls.mainImage)?.src : "";
 
-    const headerControls = props.content.properties as HeaderControlsPropertiesModel;
-    const articleControls = props.content.properties as ArticleControlsPropertiesModel;
+    const headerControls = props.content.properties as HeaderControlsContentPropertiesModel;
+    const articleControls = props.content.properties as ArticleControlsContentPropertiesModel;
 
     return (<header className="masthead" style={{ backgroundImage: `url('${process.env.NEXT_PUBLIC_UMBRACO_BASE_URL}${mainBackgroundImage}')` }}>
         <div className="container position-relative px-4 px-lg-5">
@@ -47,7 +47,7 @@ export const PageHeader = async (props: { content: IApiContentResponseModel, isA
                                             <span className="mt-4 d-block"></span>
                                             {articleControls.categories?.map((category, index) => (
                                                 <React.Fragment key={index}>
-                                                    <span className="badge rounded-pill bg-light text-dark border-dark border-5">{category.name}</span>
+                                                    <span className="badge rounded-pill bg-light text-dark border-dark border-5">{(category as CategoryElementElementModel & { name?: string }).name}</span>
                                                     &nbsp;
                                                 </React.Fragment>
                                             ))}

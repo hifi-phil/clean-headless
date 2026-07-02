@@ -7,8 +7,8 @@
  */
 import type { ContactFormControlsContentModel } from './contactFormControlsContentModel';
 import type { ContactFormControlsContentResponseModelContentType } from './contactFormControlsContentResponseModelContentType';
-import type { IApiContentResponseModelBase } from './iApiContentResponseModelBase';
+import type { IApiContentResponseBaseModel } from './iApiContentResponseBaseModel';
 
-export type ContactFormControlsContentResponseModel = Omit<IApiContentResponseModelBase & ContactFormControlsContentModel, 'contentType'> & {
+export type ContactFormControlsContentResponseModel = IApiContentResponseBaseModel & ContactFormControlsContentModel & {
   contentType: ContactFormControlsContentResponseModelContentType;
 };

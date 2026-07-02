@@ -5,28 +5,12 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { IApiMediaWithCropsResponseModelProperties } from './iApiMediaWithCropsResponseModelProperties';
-import type { ImageCropModel } from './imageCropModel';
-import type { ImageFocalPointModel } from './imageFocalPointModel';
+import type { FileMediaWithCropsResponseModel } from './fileMediaWithCropsResponseModel';
+import type { FolderMediaWithCropsResponseModel } from './folderMediaWithCropsResponseModel';
+import type { ImageMediaWithCropsResponseModel } from './imageMediaWithCropsResponseModel';
+import type { UmbracoMediaArticleMediaWithCropsResponseModel } from './umbracoMediaArticleMediaWithCropsResponseModel';
+import type { UmbracoMediaAudioMediaWithCropsResponseModel } from './umbracoMediaAudioMediaWithCropsResponseModel';
+import type { UmbracoMediaVectorGraphicsMediaWithCropsResponseModel } from './umbracoMediaVectorGraphicsMediaWithCropsResponseModel';
+import type { UmbracoMediaVideoMediaWithCropsResponseModel } from './umbracoMediaVideoMediaWithCropsResponseModel';
 
-export interface IApiMediaWithCropsResponseModel {
-  readonly id: string;
-  readonly name: string;
-  readonly mediaType: string;
-  readonly url: string;
-  /** @nullable */
-  readonly extension?: string | null;
-  /** @nullable */
-  readonly width?: number | null;
-  /** @nullable */
-  readonly height?: number | null;
-  /** @nullable */
-  readonly bytes?: number | null;
-  readonly properties: IApiMediaWithCropsResponseModelProperties;
-  focalPoint: ImageFocalPointModel;
-  /** @nullable */
-  readonly crops?: readonly ImageCropModel[] | null;
-  readonly path: string;
-  readonly createDate: string;
-  readonly updateDate: string;
-}
+export type IApiMediaWithCropsResponseModel = FolderMediaWithCropsResponseModel | ImageMediaWithCropsResponseModel | FileMediaWithCropsResponseModel | UmbracoMediaVideoMediaWithCropsResponseModel | UmbracoMediaAudioMediaWithCropsResponseModel | UmbracoMediaArticleMediaWithCropsResponseModel | UmbracoMediaVectorGraphicsMediaWithCropsResponseModel;

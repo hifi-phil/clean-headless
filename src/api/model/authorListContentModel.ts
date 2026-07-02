@@ -6,10 +6,10 @@
  * OpenAPI spec version: Latest
  */
 import type { AuthorListContentModelContentType } from './authorListContentModelContentType';
-import type { AuthorListPropertiesModel } from './authorListPropertiesModel';
-import type { IApiContentModelBase } from './iApiContentModelBase';
+import type { AuthorListContentPropertiesModel } from './authorListContentPropertiesModel';
+import type { IApiContentBaseModel } from './iApiContentBaseModel';
 
-export type AuthorListContentModel = Omit<IApiContentModelBase, 'contentType'> & {
-  properties?: AuthorListPropertiesModel;
+export type AuthorListContentModel = IApiContentBaseModel & {
   contentType: AuthorListContentModelContentType;
+  properties?: AuthorListContentPropertiesModel;
 };

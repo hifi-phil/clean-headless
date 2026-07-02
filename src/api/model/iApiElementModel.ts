@@ -5,6 +5,7 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
+import type { CategoryElementElementModel } from './categoryElementElementModel';
 import type { CodeSnippetRowElementModel } from './codeSnippetRowElementModel';
 import type { CodeSnippetRowSettingsElementModel } from './codeSnippetRowSettingsElementModel';
 import type { HidePropertyElementModel } from './hidePropertyElementModel';
@@ -23,4 +24,4 @@ import type { SpacingPropertiesElementModel } from './spacingPropertiesElementMo
 import type { VideoRowElementModel } from './videoRowElementModel';
 import type { VideoRowSettingsElementModel } from './videoRowSettingsElementModel';
 
-export type IApiElementModel = ListPageSettingsElementModel | CodeSnippetRowElementModel | IconLinkRowElementModel | ImageCarouselRowElementModel | ImageRowElementModel | LatestArticlesRowElementModel | RichTextRowElementModel | VideoRowElementModel | HidePropertyElementModel | SpacingPropertiesElementModel | IconLinkRowSettingsElementModel | CodeSnippetRowSettingsElementModel | ImageCarouselRowSettingsElementModel | ImageRowSettingsElementModel | LatestArticlesRowSettingsElementModel | RichTextRowSettingsElementModel | VideoRowSettingsElementModel;
+export type IApiElementModel = ListPageSettingsElementModel | ImageCarouselRowElementModel | CategoryElementElementModel | CodeSnippetRowElementModel | ImageRowElementModel | IconLinkRowElementModel | VideoRowElementModel | LatestArticlesRowElementModel | RichTextRowElementModel | SpacingPropertiesElementModel | HidePropertyElementModel | ImageCarouselRowSettingsElementModel | CodeSnippetRowSettingsElementModel | VideoRowSettingsElementModel | IconLinkRowSettingsElementModel | LatestArticlesRowSettingsElementModel | ImageRowSettingsElementModel | RichTextRowSettingsElementModel;

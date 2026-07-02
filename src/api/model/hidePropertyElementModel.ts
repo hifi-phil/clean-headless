@@ -6,10 +6,10 @@
  * OpenAPI spec version: Latest
  */
 import type { HidePropertyElementModelContentType } from './hidePropertyElementModelContentType';
-import type { HidePropertyPropertiesModel } from './hidePropertyPropertiesModel';
-import type { IApiElementModelBase } from './iApiElementModelBase';
+import type { HidePropertyElementPropertiesModel } from './hidePropertyElementPropertiesModel';
+import type { IApiElementBaseModel } from './iApiElementBaseModel';
 
-export type HidePropertyElementModel = Omit<IApiElementModelBase, 'contentType'> & {
-  properties?: HidePropertyPropertiesModel;
+export type HidePropertyElementModel = IApiElementBaseModel & {
   contentType: HidePropertyElementModelContentType;
+  properties?: HidePropertyElementPropertiesModel;
 };

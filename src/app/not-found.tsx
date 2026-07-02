@@ -1,4 +1,4 @@
-import { ErrorContentResponseModel, SEocontrolsContentResponseModel } from "@/api/model";
+import { ErrorContentResponseModel, SEOControlsContentResponseModel } from "@/api/model";
 import { PageHeader } from "@/components/partials/pageHeader";
 import { getMeta } from "@/helpers/metaHelper";
 import { getPage } from "@/umbraco";
@@ -11,7 +11,7 @@ const path = '/error/';
 
 export async function generateMetadata() : Promise<Metadata> {
 
-  const metaContent = await getPage<SEocontrolsContentResponseModel>(path);
+  const metaContent = await getPage<SEOControlsContentResponseModel>(path);
 
   if (!metaContent) return notFound();
 

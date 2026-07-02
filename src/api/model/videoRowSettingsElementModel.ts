@@ -5,11 +5,11 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { IApiElementModelBase } from './iApiElementModelBase';
+import type { IApiElementBaseModel } from './iApiElementBaseModel';
 import type { VideoRowSettingsElementModelContentType } from './videoRowSettingsElementModelContentType';
-import type { VideoRowSettingsPropertiesModel } from './videoRowSettingsPropertiesModel';
+import type { VideoRowSettingsElementPropertiesModel } from './videoRowSettingsElementPropertiesModel';
 
-export type VideoRowSettingsElementModel = Omit<IApiElementModelBase, 'contentType'> & {
-  properties?: VideoRowSettingsPropertiesModel;
+export type VideoRowSettingsElementModel = IApiElementBaseModel & {
   contentType: VideoRowSettingsElementModelContentType;
+  properties?: VideoRowSettingsElementPropertiesModel;
 };

@@ -1,6 +1,6 @@
-import { SEocontrolsContentResponseModel } from "@/api/model";
+import { SEOControlsContentResponseModel } from "@/api/model";
 
-export const getMeta = (metaContent?: SEocontrolsContentResponseModel) => {
+export const getMeta = (metaContent?: SEOControlsContentResponseModel) => {
     const shouldIndex = metaContent?.properties?.isIndexable !== false;
     const shouldFollow = metaContent?.properties?.isFollowable !== false;
   

@@ -6,10 +6,10 @@
  * OpenAPI spec version: Latest
  */
 import type { CategoryContentModelContentType } from './categoryContentModelContentType';
-import type { CategoryPropertiesModel } from './categoryPropertiesModel';
-import type { IApiContentModelBase } from './iApiContentModelBase';
+import type { CategoryContentPropertiesModel } from './categoryContentPropertiesModel';
+import type { IApiContentBaseModel } from './iApiContentBaseModel';
 
-export type CategoryContentModel = Omit<IApiContentModelBase, 'contentType'> & {
-  properties?: CategoryPropertiesModel;
+export type CategoryContentModel = IApiContentBaseModel & {
   contentType: CategoryContentModelContentType;
+  properties?: CategoryContentPropertiesModel;
 };

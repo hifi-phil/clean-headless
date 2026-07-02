@@ -6,10 +6,10 @@
  * OpenAPI spec version: Latest
  */
 import type { HeaderControlsContentModelContentType } from './headerControlsContentModelContentType';
-import type { HeaderControlsPropertiesModel } from './headerControlsPropertiesModel';
-import type { IApiContentModelBase } from './iApiContentModelBase';
+import type { HeaderControlsContentPropertiesModel } from './headerControlsContentPropertiesModel';
+import type { IApiContentBaseModel } from './iApiContentBaseModel';
 
-export type HeaderControlsContentModel = Omit<IApiContentModelBase, 'contentType'> & {
-  properties?: HeaderControlsPropertiesModel;
+export type HeaderControlsContentModel = IApiContentBaseModel & {
   contentType: HeaderControlsContentModelContentType;
+  properties?: HeaderControlsContentPropertiesModel;
 };

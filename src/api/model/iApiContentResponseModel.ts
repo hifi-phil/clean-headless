@@ -22,8 +22,8 @@ import type { HeaderControlsContentResponseModel } from './headerControlsContent
 import type { HomeContentResponseModel } from './homeContentResponseModel';
 import type { MainImageControlsContentResponseModel } from './mainImageControlsContentResponseModel';
 import type { SearchContentResponseModel } from './searchContentResponseModel';
-import type { SEocontrolsContentResponseModel } from './sEocontrolsContentResponseModel';
+import type { SEOControlsContentResponseModel } from './sEOControlsContentResponseModel';
 import type { VisibilityControlsContentResponseModel } from './visibilityControlsContentResponseModel';
-import type { XMlsitemapContentResponseModel } from './xMlsitemapContentResponseModel';
+import type { XMLSitemapContentResponseModel } from './xMLSitemapContentResponseModel';
 
-export type IApiContentResponseModel = ArticleControlsContentResponseModel | CategoryContentResponseModel | ContactFormControlsContentResponseModel | ContentControlsContentResponseModel | FooterControlsContentResponseModel | HeaderControlsContentResponseModel | MainImageControlsContentResponseModel | SEocontrolsContentResponseModel | VisibilityControlsContentResponseModel | HomeContentResponseModel | ArticleContentResponseModel | ArticleListContentResponseModel | AuthorContentResponseModel | AuthorListContentResponseModel | CategoryListContentResponseModel | ContactContentResponseModel | ContentContentResponseModel | ErrorContentResponseModel | SearchContentResponseModel | XMlsitemapContentResponseModel;
+export type IApiContentResponseModel = HeaderControlsContentResponseModel | FooterControlsContentResponseModel | ContactFormControlsContentResponseModel | CategoryContentResponseModel | ContentControlsContentResponseModel | SEOControlsContentResponseModel | VisibilityControlsContentResponseModel | MainImageControlsContentResponseModel | ArticleControlsContentResponseModel | XMLSitemapContentResponseModel | CategoryListContentResponseModel | AuthorContentResponseModel | ContactContentResponseModel | ContentContentResponseModel | SearchContentResponseModel | AuthorListContentResponseModel | HomeContentResponseModel | ErrorContentResponseModel | ArticleListContentResponseModel | ArticleContentResponseModel;

@@ -44,9 +44,9 @@ export default function SearchForm(props: { dictionaryItems: TranslationModel[] 
         </div>
         <div className="col-lg-8 col-md-10 mx-auto">
             {
-                results && results.count && results.count > 0 && (
+                results && Number(results.count) > 0 && (
                     <>
-                        {HTMLParser(formatString(getDictionValue(props.dictionaryItems, "Search.Results"), results.count, searchQuery))}
+                        {HTMLParser(formatString(getDictionValue(props.dictionaryItems, "Search.Results"), Number(results.count), searchQuery))}
                         {results.items?.map((item, index) => (
                             <>
                                 <div className="post-preview">

@@ -1,4 +1,4 @@
-import { ArticleContentResponseModel, ArticleListContentResponseModel, SEocontrolsContentResponseModel } from "@/api/model";
+import { ArticleContentResponseModel, ArticleListContentResponseModel, SEOControlsContentResponseModel } from "@/api/model";
 import { PageHeader } from "@/components/partials/pageHeader";
 import { getArticles, getPage } from "@/umbraco";
 import { GetComponent } from "@/umbraco/components/GetComponent";
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const { articleSlug } = processSlugs(slug);
 
-  const metaContent = articleSlug ? await getPage<SEocontrolsContentResponseModel>(`${ARTICLES_ROOT_SEGENT_NAME}/${articleSlug}`) : await getPage<SEocontrolsContentResponseModel>(`${ARTICLES_ROOT_SEGENT_NAME}`);
+    const metaContent = articleSlug ? await getPage<SEOControlsContentResponseModel>(`${ARTICLES_ROOT_SEGENT_NAME}/${articleSlug}`) : await getPage<SEOControlsContentResponseModel>(`${ARTICLES_ROOT_SEGENT_NAME}`);
 
   if (!metaContent) return notFound();
 

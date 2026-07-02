@@ -1,4 +1,4 @@
-import { SearchContentResponseModel, SEocontrolsContentResponseModel } from "@/api/model";
+import { SearchContentResponseModel, SEOControlsContentResponseModel } from "@/api/model";
 import { PageHeader } from "@/components/partials/pageHeader";
 import { getPage } from "@/umbraco";
 import { getDictionaryItems } from "@/helpers/dictionary";
@@ -11,7 +11,7 @@ const path = '/search/';
 
 export async function generateMetadata() : Promise<Metadata> {
 
-  const metaContent = await getPage<SEocontrolsContentResponseModel>(path);
+  const metaContent = await getPage<SEOControlsContentResponseModel>(path);
 
   if (!metaContent) return notFound();
 

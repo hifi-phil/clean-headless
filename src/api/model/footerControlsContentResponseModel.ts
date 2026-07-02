@@ -7,8 +7,8 @@
  */
 import type { FooterControlsContentModel } from './footerControlsContentModel';
 import type { FooterControlsContentResponseModelContentType } from './footerControlsContentResponseModelContentType';
-import type { IApiContentResponseModelBase } from './iApiContentResponseModelBase';
+import type { IApiContentResponseBaseModel } from './iApiContentResponseBaseModel';
 
-export type FooterControlsContentResponseModel = Omit<IApiContentResponseModelBase & FooterControlsContentModel, 'contentType'> & {
+export type FooterControlsContentResponseModel = IApiContentResponseBaseModel & FooterControlsContentModel & {
   contentType: FooterControlsContentResponseModelContentType;
 };

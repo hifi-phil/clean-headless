@@ -17,5 +17,4 @@ export interface ProblemDetails {
   detail?: string | null;
   /** @nullable */
   instance?: string | null;
-  [key: string]: unknown;
 }

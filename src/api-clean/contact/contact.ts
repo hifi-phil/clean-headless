@@ -45,10 +45,10 @@ export const getPostApiV1ContactPostContactFormUrl = () => {
 
 
 
-  return `http://localhost:43343/api/v1/contact/postContactForm`
+  return `http://localhost:38357/api/v1/contact/postContactForm`
 }
 
-export const postApiV1ContactPostContactForm = async (emailForm?: EmailForm, options?: RequestInit): Promise<postApiV1ContactPostContactFormResponse> => {
+export const postApiV1ContactPostContactForm = async (emailForm: EmailForm, options?: RequestInit): Promise<postApiV1ContactPostContactFormResponse> => {
 
   return customFetch<postApiV1ContactPostContactFormResponse>(getPostApiV1ContactPostContactFormUrl(),
   {

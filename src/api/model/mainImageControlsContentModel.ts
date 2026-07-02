@@ -5,11 +5,11 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { IApiContentModelBase } from './iApiContentModelBase';
+import type { IApiContentBaseModel } from './iApiContentBaseModel';
 import type { MainImageControlsContentModelContentType } from './mainImageControlsContentModelContentType';
-import type { MainImageControlsPropertiesModel } from './mainImageControlsPropertiesModel';
+import type { MainImageControlsContentPropertiesModel } from './mainImageControlsContentPropertiesModel';
 
-export type MainImageControlsContentModel = Omit<IApiContentModelBase, 'contentType'> & {
-  properties?: MainImageControlsPropertiesModel;
+export type MainImageControlsContentModel = IApiContentBaseModel & {
   contentType: MainImageControlsContentModelContentType;
+  properties?: MainImageControlsContentPropertiesModel;
 };

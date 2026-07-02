@@ -5,11 +5,11 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { IApiElementModelBase } from './iApiElementModelBase';
+import type { IApiElementBaseModel } from './iApiElementBaseModel';
 import type { IconLinkRowSettingsElementModelContentType } from './iconLinkRowSettingsElementModelContentType';
-import type { IconLinkRowSettingsPropertiesModel } from './iconLinkRowSettingsPropertiesModel';
+import type { IconLinkRowSettingsElementPropertiesModel } from './iconLinkRowSettingsElementPropertiesModel';
 
-export type IconLinkRowSettingsElementModel = Omit<IApiElementModelBase, 'contentType'> & {
-  properties?: IconLinkRowSettingsPropertiesModel;
+export type IconLinkRowSettingsElementModel = IApiElementBaseModel & {
   contentType: IconLinkRowSettingsElementModelContentType;
+  properties?: IconLinkRowSettingsElementPropertiesModel;
 };

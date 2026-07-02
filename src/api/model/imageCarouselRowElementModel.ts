@@ -5,11 +5,11 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { IApiElementModelBase } from './iApiElementModelBase';
+import type { IApiElementBaseModel } from './iApiElementBaseModel';
 import type { ImageCarouselRowElementModelContentType } from './imageCarouselRowElementModelContentType';
-import type { ImageCarouselRowPropertiesModel } from './imageCarouselRowPropertiesModel';
+import type { ImageCarouselRowElementPropertiesModel } from './imageCarouselRowElementPropertiesModel';
 
-export type ImageCarouselRowElementModel = Omit<IApiElementModelBase, 'contentType'> & {
-  properties?: ImageCarouselRowPropertiesModel;
+export type ImageCarouselRowElementModel = IApiElementBaseModel & {
   contentType: ImageCarouselRowElementModelContentType;
+  properties?: ImageCarouselRowElementPropertiesModel;
 };

@@ -7,8 +7,8 @@
  */
 import type { HeaderControlsContentModel } from './headerControlsContentModel';
 import type { HeaderControlsContentResponseModelContentType } from './headerControlsContentResponseModelContentType';
-import type { IApiContentResponseModelBase } from './iApiContentResponseModelBase';
+import type { IApiContentResponseBaseModel } from './iApiContentResponseBaseModel';
 
-export type HeaderControlsContentResponseModel = Omit<IApiContentResponseModelBase & HeaderControlsContentModel, 'contentType'> & {
+export type HeaderControlsContentResponseModel = IApiContentResponseBaseModel & HeaderControlsContentModel & {
   contentType: HeaderControlsContentResponseModelContentType;
 };

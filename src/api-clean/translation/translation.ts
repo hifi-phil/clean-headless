@@ -45,7 +45,7 @@ export const getGetApiV1DictionaryGetdictionarytranslationsUrl = () => {
 
 
 
-  return `http://localhost:43343/api/v1/dictionary/getdictionarytranslations`
+  return `http://localhost:38357/api/v1/dictionary/getdictionarytranslations`
 }
 
 export const getApiV1DictionaryGetdictionarytranslations = async ( options?: RequestInit): Promise<getApiV1DictionaryGetdictionarytranslationsResponse> => {

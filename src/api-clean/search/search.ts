@@ -53,7 +53,7 @@ export const getGetApiV1SearchGetSearchResultsUrl = (params?: GetApiV1SearchGetS
 
   const stringifiedParams = normalizedParams.toString();
 
-  return stringifiedParams.length > 0 ? `http://localhost:43343/api/v1/search/getSearchResults?${stringifiedParams}` : `http://localhost:43343/api/v1/search/getSearchResults`
+  return stringifiedParams.length > 0 ? `http://localhost:38357/api/v1/search/getSearchResults?${stringifiedParams}` : `http://localhost:38357/api/v1/search/getSearchResults`
 }
 
 export const getApiV1SearchGetSearchResults = async (params?: GetApiV1SearchGetSearchResultsParams, options?: RequestInit): Promise<getApiV1SearchGetSearchResultsResponse> => {

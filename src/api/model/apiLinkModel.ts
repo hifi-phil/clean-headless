@@ -5,22 +5,24 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { ApiContentRouteModel } from './apiContentRouteModel';
+import type { IApiContentRouteModel } from './iApiContentRouteModel';
 import type { LinkTypeModel } from './linkTypeModel';
 
 export interface ApiLinkModel {
   /** @nullable */
-  readonly url?: string | null;
+  url?: string | null;
   /** @nullable */
-  readonly queryString?: string | null;
+  queryString?: string | null;
   /** @nullable */
-  readonly title?: string | null;
+  title?: string | null;
   /** @nullable */
-  readonly target?: string | null;
+  target?: string | null;
   /** @nullable */
-  readonly destinationId?: string | null;
+  destinationId?: string | null;
   /** @nullable */
-  readonly destinationType?: string | null;
-  readonly route?: ApiContentRouteModel | null;
+  destinationType?: string | null;
+  route?: IApiContentRouteModel;
   linkType: LinkTypeModel;
+  /** @nullable */
+  culture?: string | null;
 }

@@ -5,11 +5,11 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { IApiContentModelBase } from './iApiContentModelBase';
-import type { SEocontrolsContentModelContentType } from './sEocontrolsContentModelContentType';
-import type { SEocontrolsPropertiesModel } from './sEocontrolsPropertiesModel';
+import type { IApiContentBaseModel } from './iApiContentBaseModel';
+import type { SEOControlsContentModelContentType } from './sEOControlsContentModelContentType';
+import type { SEOControlsContentPropertiesModel } from './sEOControlsContentPropertiesModel';
 
-export type SEocontrolsContentModel = Omit<IApiContentModelBase, 'contentType'> & {
-  properties?: SEocontrolsPropertiesModel;
-  contentType: SEocontrolsContentModelContentType;
+export type SEOControlsContentModel = IApiContentBaseModel & {
+  contentType: SEOControlsContentModelContentType;
+  properties?: SEOControlsContentPropertiesModel;
 };

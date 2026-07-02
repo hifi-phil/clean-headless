@@ -6,10 +6,10 @@
  * OpenAPI spec version: Latest
  */
 import type { FooterControlsContentModelContentType } from './footerControlsContentModelContentType';
-import type { FooterControlsPropertiesModel } from './footerControlsPropertiesModel';
-import type { IApiContentModelBase } from './iApiContentModelBase';
+import type { FooterControlsContentPropertiesModel } from './footerControlsContentPropertiesModel';
+import type { IApiContentBaseModel } from './iApiContentBaseModel';
 
-export type FooterControlsContentModel = Omit<IApiContentModelBase, 'contentType'> & {
-  properties?: FooterControlsPropertiesModel;
+export type FooterControlsContentModel = IApiContentBaseModel & {
   contentType: FooterControlsContentModelContentType;
+  properties?: FooterControlsContentPropertiesModel;
 };

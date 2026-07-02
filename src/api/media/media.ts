@@ -10,7 +10,6 @@ import type {
   GetMediaItemById20Params,
   GetMediaItemByPath20Params,
   GetMediaItems20Params,
-  HttpValidationProblemDetails,
   IApiMediaWithCropsResponseModel,
   PagedIApiMediaWithCropsResponseModel,
   ProblemDetails
@@ -24,7 +23,7 @@ export type getMedia20Response200 = {
 }
 
 export type getMedia20Response400 = {
-  data: ProblemDetails | HttpValidationProblemDetails
+  data: ProblemDetails
   status: 400
 }
 
@@ -49,60 +48,12 @@ export const getGetMedia20Url = (params?: GetMedia20Params,) => {
 
   const stringifiedParams = normalizedParams.toString();
 
-  return stringifiedParams.length > 0 ? `http://localhost:43343/umbraco/delivery/api/v2/media?${stringifiedParams}` : `http://localhost:43343/umbraco/delivery/api/v2/media`
+  return stringifiedParams.length > 0 ? `http://localhost:38357/umbraco/delivery/api/v2/media?${stringifiedParams}` : `http://localhost:38357/umbraco/delivery/api/v2/media`
 }
 
 export const getMedia20 = async (params?: GetMedia20Params, options?: RequestInit): Promise<getMedia20Response> => {
 
   return customFetch<getMedia20Response>(getGetMedia20Url(params),
-  {
-    ...options,
-    method: 'GET'
-
-
-  }
-);}
-
-
-export type getMediaItemByPath20Response200 = {
-  data: IApiMediaWithCropsResponseModel
-  status: 200
-}
-
-export type getMediaItemByPath20Response404 = {
-  data: void
-  status: 404
-}
-
-export type getMediaItemByPath20ResponseSuccess = (getMediaItemByPath20Response200) & {
-  headers: Headers;
-};
-export type getMediaItemByPath20ResponseError = (getMediaItemByPath20Response404) & {
-  headers: Headers;
-};
-
-export type getMediaItemByPath20Response = (getMediaItemByPath20ResponseSuccess | getMediaItemByPath20ResponseError)
-
-export const getGetMediaItemByPath20Url = (path: string,
-    params?: GetMediaItemByPath20Params,) => {
-  const normalizedParams = new URLSearchParams();
-
-  Object.entries(params || {}).forEach(([key, value]) => {
-
-    if (value !== undefined) {
-      normalizedParams.append(key, value === null ? 'null' : String(value))
-    }
-  });
-
-  const stringifiedParams = normalizedParams.toString();
-
-  return stringifiedParams.length > 0 ? `http://localhost:43343/umbraco/delivery/api/v2/media/item/${path}?${stringifiedParams}` : `http://localhost:43343/umbraco/delivery/api/v2/media/item/${path}`
-}
-
-export const getMediaItemByPath20 = async (path: string,
-    params?: GetMediaItemByPath20Params, options?: RequestInit): Promise<getMediaItemByPath20Response> => {
-
-  return customFetch<getMediaItemByPath20Response>(getGetMediaItemByPath20Url(path,params),
   {
     ...options,
     method: 'GET'
@@ -144,13 +95,61 @@ export const getGetMediaItemById20Url = (id: string,
 
   const stringifiedParams = normalizedParams.toString();
 
-  return stringifiedParams.length > 0 ? `http://localhost:43343/umbraco/delivery/api/v2/media/item/${id}?${stringifiedParams}` : `http://localhost:43343/umbraco/delivery/api/v2/media/item/${id}`
+  return stringifiedParams.length > 0 ? `http://localhost:38357/umbraco/delivery/api/v2/media/item/${id}?${stringifiedParams}` : `http://localhost:38357/umbraco/delivery/api/v2/media/item/${id}`
 }
 
 export const getMediaItemById20 = async (id: string,
     params?: GetMediaItemById20Params, options?: RequestInit): Promise<getMediaItemById20Response> => {
 
   return customFetch<getMediaItemById20Response>(getGetMediaItemById20Url(id,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type getMediaItemByPath20Response200 = {
+  data: IApiMediaWithCropsResponseModel
+  status: 200
+}
+
+export type getMediaItemByPath20Response404 = {
+  data: void
+  status: 404
+}
+
+export type getMediaItemByPath20ResponseSuccess = (getMediaItemByPath20Response200) & {
+  headers: Headers;
+};
+export type getMediaItemByPath20ResponseError = (getMediaItemByPath20Response404) & {
+  headers: Headers;
+};
+
+export type getMediaItemByPath20Response = (getMediaItemByPath20ResponseSuccess | getMediaItemByPath20ResponseError)
+
+export const getGetMediaItemByPath20Url = (path: string,
+    params?: GetMediaItemByPath20Params,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `http://localhost:38357/umbraco/delivery/api/v2/media/item/${path}?${stringifiedParams}` : `http://localhost:38357/umbraco/delivery/api/v2/media/item/${path}`
+}
+
+export const getMediaItemByPath20 = async (path: string,
+    params?: GetMediaItemByPath20Params, options?: RequestInit): Promise<getMediaItemByPath20Response> => {
+
+  return customFetch<getMediaItemByPath20Response>(getGetMediaItemByPath20Url(path,params),
   {
     ...options,
     method: 'GET'
@@ -184,7 +183,7 @@ export const getGetMediaItems20Url = (params?: GetMediaItems20Params,) => {
 
   const stringifiedParams = normalizedParams.toString();
 
-  return stringifiedParams.length > 0 ? `http://localhost:43343/umbraco/delivery/api/v2/media/items?${stringifiedParams}` : `http://localhost:43343/umbraco/delivery/api/v2/media/items`
+  return stringifiedParams.length > 0 ? `http://localhost:38357/umbraco/delivery/api/v2/media/items?${stringifiedParams}` : `http://localhost:38357/umbraco/delivery/api/v2/media/items`
 }
 
 export const getMediaItems20 = async (params?: GetMediaItems20Params, options?: RequestInit): Promise<getMediaItems20Response> => {

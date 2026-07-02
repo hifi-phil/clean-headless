@@ -5,10 +5,10 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { IApiContentResponseModelBase } from './iApiContentResponseModelBase';
+import type { IApiContentResponseBaseModel } from './iApiContentResponseBaseModel';
 import type { SearchContentModel } from './searchContentModel';
 import type { SearchContentResponseModelContentType } from './searchContentResponseModelContentType';
 
-export type SearchContentResponseModel = Omit<IApiContentResponseModelBase & SearchContentModel, 'contentType'> & {
+export type SearchContentResponseModel = IApiContentResponseBaseModel & SearchContentModel & {
   contentType: SearchContentResponseModelContentType;
 };

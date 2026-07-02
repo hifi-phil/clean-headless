@@ -22,8 +22,8 @@ import type { HeaderControlsContentModel } from './headerControlsContentModel';
 import type { HomeContentModel } from './homeContentModel';
 import type { MainImageControlsContentModel } from './mainImageControlsContentModel';
 import type { SearchContentModel } from './searchContentModel';
-import type { SEocontrolsContentModel } from './sEocontrolsContentModel';
+import type { SEOControlsContentModel } from './sEOControlsContentModel';
 import type { VisibilityControlsContentModel } from './visibilityControlsContentModel';
-import type { XMlsitemapContentModel } from './xMlsitemapContentModel';
+import type { XMLSitemapContentModel } from './xMLSitemapContentModel';
 
-export type IApiContentModel = ArticleControlsContentModel | CategoryContentModel | ContactFormControlsContentModel | ContentControlsContentModel | FooterControlsContentModel | HeaderControlsContentModel | MainImageControlsContentModel | SEocontrolsContentModel | VisibilityControlsContentModel | HomeContentModel | ArticleContentModel | ArticleListContentModel | AuthorContentModel | AuthorListContentModel | CategoryListContentModel | ContactContentModel | ContentContentModel | ErrorContentModel | SearchContentModel | XMlsitemapContentModel;
+export type IApiContentModel = HeaderControlsContentModel | FooterControlsContentModel | ContactFormControlsContentModel | CategoryContentModel | ContentControlsContentModel | SEOControlsContentModel | VisibilityControlsContentModel | MainImageControlsContentModel | ArticleControlsContentModel | XMLSitemapContentModel | CategoryListContentModel | AuthorContentModel | ContactContentModel | ContentContentModel | SearchContentModel | AuthorListContentModel | HomeContentModel | ErrorContentModel | ArticleListContentModel | ArticleContentModel;

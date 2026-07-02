@@ -6,10 +6,10 @@
  * OpenAPI spec version: Latest
  */
 import type { ContactFormControlsContentModelContentType } from './contactFormControlsContentModelContentType';
-import type { ContactFormControlsPropertiesModel } from './contactFormControlsPropertiesModel';
-import type { IApiContentModelBase } from './iApiContentModelBase';
+import type { ContactFormControlsContentPropertiesModel } from './contactFormControlsContentPropertiesModel';
+import type { IApiContentBaseModel } from './iApiContentBaseModel';
 
-export type ContactFormControlsContentModel = Omit<IApiContentModelBase, 'contentType'> & {
-  properties?: ContactFormControlsPropertiesModel;
+export type ContactFormControlsContentModel = IApiContentBaseModel & {
   contentType: ContactFormControlsContentModelContentType;
+  properties?: ContactFormControlsContentPropertiesModel;
 };

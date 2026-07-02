@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "generate": "node ./node_modules/orval/dist/bin/orval.mjs"
+    "generate": "orval"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",

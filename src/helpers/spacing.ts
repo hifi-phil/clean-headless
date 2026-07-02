@@ -1,5 +1,5 @@
 import {
-  SpacingPropertiesPropertiesModel,
+  SpacingPropertiesElementPropertiesModel,
   IApiElementModel,
 } from "../api/model";
 
@@ -36,8 +36,8 @@ export function getSpacingClasses(
     let spacingClasses = "";
   
     if (settings.properties && "paddingTop" in settings.properties) {
-      const spacing: SpacingPropertiesPropertiesModel =
-        settings.properties as SpacingPropertiesPropertiesModel;
+      const spacing: SpacingPropertiesElementPropertiesModel =
+        settings.properties as SpacingPropertiesElementPropertiesModel;
       spacingClasses = getSpacingClasses(
         spacing.paddingTop,
         spacing.paddingBottom,

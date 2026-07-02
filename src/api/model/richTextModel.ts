@@ -5,10 +5,9 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { ApiBlockGridItemModel } from './apiBlockGridItemModel';
 import type { ApiBlockItemModel } from './apiBlockItemModel';
 
 export interface RichTextModel {
   markup: string;
-  blocks: (ApiBlockItemModel | ApiBlockGridItemModel)[];
+  blocks: ApiBlockItemModel[];
 }

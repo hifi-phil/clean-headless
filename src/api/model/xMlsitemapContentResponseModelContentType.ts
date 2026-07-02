@@ -6,9 +6,9 @@
  * OpenAPI spec version: Latest
  */
 
-export type XMlsitemapContentResponseModelContentType = typeof XMlsitemapContentResponseModelContentType[keyof typeof XMlsitemapContentResponseModelContentType];
+export type XMLSitemapContentResponseModelContentType = typeof XMLSitemapContentResponseModelContentType[keyof typeof XMLSitemapContentResponseModelContentType];
 
 
-export const XMlsitemapContentResponseModelContentType = {
+export const XMLSitemapContentResponseModelContentType = {
   xMLSitemap: 'xMLSitemap',
 } as const;
