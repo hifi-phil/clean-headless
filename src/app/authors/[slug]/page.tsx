@@ -4,7 +4,7 @@ import { PageHeader } from '@/components/partials/pageHeader';
 import { getAuthors, getPage } from '@/umbraco';
 import { getDictionaryItems } from "@/helpers/dictionary";
 import { ImagesToImageMap } from "@/helpers/image";
-import { AuthorContentResponseModel, IApiMediaWithCropsModel, SEocontrolsContentResponseModel } from '@/api/model';
+import { AuthorContentResponseModel, IApiMediaWithCropsModel, SEOControlsContentResponseModel } from '@/api/model';
 import { GetComponent } from '@/umbraco/components/GetComponent';
 import { notFound } from 'next/navigation';
 import { getMeta } from '@/helpers/metaHelper';
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const { slug } = await params;
 
-  const metaContent = await getPage<SEocontrolsContentResponseModel>(`${AUTHORS_ROOT_SEGENT_NAME}/${slug}`);
+  const metaContent = await getPage<SEOControlsContentResponseModel>(`${AUTHORS_ROOT_SEGENT_NAME}/${slug}`);
 
   if (!metaContent) return notFound();
 

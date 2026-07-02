@@ -1,4 +1,4 @@
-import { HomeContentResponseModel, SEocontrolsContentResponseModel } from "@/api/model";
+import { HomeContentResponseModel, SEOControlsContentResponseModel } from "@/api/model";
 import { PageHeader } from "@/components/partials/pageHeader";
 import { getMeta } from "@/helpers/metaHelper";
 import { getPage } from "@/umbraco";
@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 
 export async function generateMetadata() : Promise<Metadata> {
 
-  const metaContent = await getPage<SEocontrolsContentResponseModel>('');
+  const metaContent = await getPage<SEOControlsContentResponseModel>('');
 
   if (!metaContent) return notFound();
 

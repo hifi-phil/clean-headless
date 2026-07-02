@@ -37,11 +37,11 @@ export const MainNavigationCollapse = ({ navigation, dictionary, homePage }: Mai
             <div className="navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ms-auto py-4 py-lg-0">
                     <li className="nav-item">
-                        <a className="nav-link px-lg-3 py-3 py-lg-4" href={homePage?.route?.path}>{homePage?.name}</a>
+                        <a className="nav-link px-lg-3 py-3 py-lg-4" href={homePage?.route?.path!}>{homePage?.name}</a>
                     </li>
                     {navigation.map((page, index) => (
                         <li key={index} className="nav-item">
-                            <a className="nav-link px-lg-3 py-3 py-lg-4" href={page.route?.path}>{page.name}</a>
+                            <a className="nav-link px-lg-3 py-3 py-lg-4" href={page.route?.path!}>{page.name}</a>
                         </li>
                     ))}
                 </ul>

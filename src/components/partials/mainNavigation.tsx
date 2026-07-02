@@ -10,7 +10,7 @@ export const MainNavigation = async (props: { dictionary?: TranslationModel[], h
     return (
         <nav className="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div className="container px-4 px-lg-5">
-                <a className="navbar-brand" href={props.homePage?.route?.path}>{getDictionValue(props.dictionary, "Navigation.SiteName")}</a>
+                <a className="navbar-brand" href={props.homePage?.route?.path!}>{getDictionValue(props.dictionary, "Navigation.SiteName")}</a>
                 <MainNavigationCollapse navigation={navigation} dictionary={props.dictionary} homePage={props.homePage} />
             </div>
         </nav>

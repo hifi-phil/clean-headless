@@ -8,12 +8,12 @@ export const RichTextRow = async (props: { dictionary: TranslationModel[], conte
     const content = props.content as RichTextRowElementModel;
 
     
-    if(!content || !content.properties || !content.properties.content) return null;
+    if(!content || !content.properties || !content.properties.richContent) return null;
     const spacingClasses = getSpacingClass(props.settings);
 
     return (
         <div className={`richtext ${spacingClasses}`}>
-            {HTMLParser(content.properties.content.markup)}
+            {HTMLParser(content.properties.richContent.markup)}
         </div>
     )
 }

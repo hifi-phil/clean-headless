@@ -18,28 +18,9 @@ module.exports = {
       },
     },
     input: {
-      target: `${baseUrl}/umbraco/swagger/delivery/swagger.json`,
+      target: `${baseUrl}/umbraco/openapi/delivery.json`,
     },
   },
-  //this won't run whilst the umbraco ommunity poackage is present
-  /*'engage-transfomer': { 
-    output: {
-      mode: 'tags-split',
-      target: './src/api-engage/client.ts',
-      baseUrl: `${baseUrl}/`,
-      schemas: './src/api-engage/model',
-      client: 'fetch',
-      override: {
-          mutator: {
-              path: './src/custom-fetch.ts',
-              name: 'customFetch',
-          },
-      },
-    },
-    input: {
-      target: `${baseUrl}/umbraco/swagger/engage-api/swagger.json?urls.primaryName=Umbraco+Engage+API`,
-    },
-  },*/
   'clean-starter-transfomer': {
     output: {
       mode: 'tags-split',
@@ -55,7 +36,7 @@ module.exports = {
       },
     },
     input: {
-      target: `${baseUrl}/umbraco/swagger/clean-starter/swagger.json?urls.primaryName=Clean+starter+kit`,
+      target: `${baseUrl}/umbraco/openapi/clean-starter.json?urls.primaryName=Clean+starter+kit`,
     },
   }
 };

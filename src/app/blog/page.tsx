@@ -1,4 +1,4 @@
-import { ArticleListContentModel, SEocontrolsContentModel } from "@/api/model";
+import { ArticleListContentResponseModel, SEOControlsContentResponseModel } from "@/api/model";
 import { PageHeader } from "@/components/partials/pageHeader";
 import { getMeta } from "@/helpers/metaHelper";
 import { getPage } from "@/umbraco";
@@ -11,7 +11,7 @@ const path = '/blog/';
 
 export async function generateMetadata() : Promise<Metadata> {
 
-  const metaContent = await getPage<SEocontrolsContentModel>(path);
+  const metaContent = await getPage<SEOControlsContentResponseModel>(path);
 
   if (!metaContent) return notFound();
 
@@ -21,7 +21,7 @@ export async function generateMetadata() : Promise<Metadata> {
 export default async function ArticleListing() {
 
   const dictionaryItems = await getDictionaryItems();
-  const articleList = await getPage<ArticleListContentModel>(path);
+  const articleList = await getPage<ArticleListContentResponseModel>(path);
 
   if (!articleList) return notFound();
 

@@ -1,13 +1,13 @@
 "use client";
 import { TranslationModel } from "@/api-clean/model";
-import { CodeSnippetRowPropertiesModel, CodeSnippetRowSettingsPropertiesModel, IApiElementModel } from "@/api/model";
+import { CodeSnippetRowElementPropertiesModel, CodeSnippetRowSettingsElementPropertiesModel, IApiElementModel } from "@/api/model";
 import { getSpacingClass } from "@/helpers/spacing";
 import Highlight from 'react-highlight'
 
 export const CodeSnippetRow = (props: { dictionary: TranslationModel[], content?: IApiElementModel, settings?: IApiElementModel, pageNo?: number }) => {
 
-    const content = props.content?.properties as CodeSnippetRowPropertiesModel;
-    const settings = props.settings?.properties as CodeSnippetRowSettingsPropertiesModel;
+    const content = props.content?.properties as CodeSnippetRowElementPropertiesModel;
+    const settings = props.settings?.properties as CodeSnippetRowSettingsElementPropertiesModel;
 
     if (settings?.hide ?? false) return null;
 

@@ -1,6 +1,7 @@
 // NOTE: Supports cases where `content-type` is other than `json`
-const getBody = <T>(c: Response | Request): Promise<T> => {
-    return c.json();
+const getBody = async <T>(c: Response | Request): Promise<T> => {
+    const text = await c.text();
+    return (text ? JSON.parse(text) : {}) as T;
 };
 
 const getUrl = (contextUrl: string): string => {

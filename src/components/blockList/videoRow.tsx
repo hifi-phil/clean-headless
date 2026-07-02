@@ -1,12 +1,12 @@
 import { TranslationModel } from "@/api-clean/model";
-import { IApiElementModel, VideoRowPropertiesModel, VideoRowSettingsPropertiesModel } from "@/api/model";
+import { IApiElementModel, VideoRowElementPropertiesModel, VideoRowSettingsElementPropertiesModel } from "@/api/model";
 import { getSpacingClass } from "@/helpers/spacing";
 import { getYouTubeVideoId } from "@/helpers/youtube";
 
 export const VideoRow = async (props: { dictionary: TranslationModel[], content?: IApiElementModel, settings?: IApiElementModel, pageNo?: number }) => {
 
-    const content = props.content?.properties as VideoRowPropertiesModel;
-    const settings = props.settings?.properties as VideoRowSettingsPropertiesModel;
+    const content = props.content?.properties as VideoRowElementPropertiesModel;
+    const settings = props.settings?.properties as VideoRowSettingsElementPropertiesModel;
 
     if (settings?.hide ?? false) { return; }
     if (!content.videoUrl) { return; }

@@ -33,22 +33,22 @@ export async function POST(request: NextRequest) {
         let url = removeLastSlash(contentPath)
         if(url === '') url = '/';
         revalidatePath(url);
-        revalidateTag('navigation');
+        revalidateTag('navigation', 'max');
         console.log(`revalidated content path ${url}`)
     }
 
     if(updateArticles) {
-        revalidateTag('articles')
+        revalidateTag('articles', 'max')
         console.log(`revalidated articles tag`)
     }
 
     if(updateNavigation) {
-      revalidateTag('navigation')
+      revalidateTag('navigation', 'max')
       console.log(`revalidated layout navigation`)
     }
 
     if(updateLocalisation) {
-      revalidateTag('localisation')
+      revalidateTag('localisation', 'max')
       console.log(`revalidated localisation`)
     }
 

@@ -1,5 +1,5 @@
 import { TranslationModel } from "@/api-clean/model";
-import { ArticleContentResponseModel, AuthorContentResponseModel } from "@/api/model";
+import { ArticleContentResponseModel, AuthorContentResponseModel, CategoryElementElementModel } from "@/api/model";
 import { getDictionValue } from "@/helpers/dictionary";
 import Link from "next/link";
 
@@ -31,7 +31,7 @@ export const LatestArticlesRow = (props : {dictionary: TranslationModel[], artic
                 <>
                     <span className="mt-2 d-block"></span>
                     {article.properties.categories
-                    .map(category => category.name)
+                    .map(category => (category as CategoryElementElementModel & { name?: string }).name)
                     .sort((a, b) => a!.localeCompare(b!))
                     .map((category, index) => (
                         <span key={index} className="badge rounded-pill bg-light text-dark border-dark border-5">
