@@ -1,8 +1,14 @@
-## Clean Starter Kit Headless
+## Clean Starter Kit Headless (Umbraco 18)
 
-This is a headless implementation of the [Clean Starter Kit](https://marketplace.umbraco.com/package/clean) by Paul Seal, built for Umbraco 18, using Next.js 16 and orval 8.19.
+This is a headless implementation of the [Clean Starter Kit](https://marketplace.umbraco.com/package/clean) by Paul Seal.
 
 If you need the Umbraco 17 version, it can be found on the [v17/main branch](https://github.com/hifi-phil/clean-headless/tree/v17/main).
+
+### Version Notes
+
+- This branch is for Umbraco v18 Headless.
+- Next.js version: ^16.2.9
+- Orval version: ^8.19.0
 
 ### Umbraco Setup
 Firstly, you will need to create an instance of Umbraco with the Clean Starter Kit installed. Follow the instructions [here](https://github.com/prjseal/Clean). 
