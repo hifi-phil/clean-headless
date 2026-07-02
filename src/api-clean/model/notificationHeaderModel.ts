@@ -5,12 +5,10 @@
  * Contains headless endpoints for search, dictionaries and forms
  * OpenAPI spec version: Latest
  */
+import type { EventMessageTypeModel } from './eventMessageTypeModel';
 
-export interface EmailForm {
-  /** @nullable */
-  name?: string | null;
-  /** @nullable */
-  email?: string | null;
-  /** @nullable */
-  message?: string | null;
+export interface NotificationHeaderModel {
+  message: string;
+  category: string;
+  type: EventMessageTypeModel;
 }
