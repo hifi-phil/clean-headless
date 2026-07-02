@@ -1,4 +1,4 @@
-import { ArticleContentModel, ArticleListContentModel, SEocontrolsContentResponseModel } from "@/api/model";
+import { ArticleContentResponseModel, ArticleListContentResponseModel, SEocontrolsContentResponseModel } from "@/api/model";
 import { PageHeader } from "@/components/partials/pageHeader";
 import { getArticles, getPage } from "@/umbraco";
 import { GetComponent } from "@/umbraco/components/GetComponent";
@@ -42,7 +42,9 @@ export default async function Article({ params }: { params: Promise<{ slug: stri
   const { slug } = await params;
   const { articleSlug, pageNoSlug } = processSlugs(slug);
 
-  const page = articleSlug ? await getPage<ArticleContentModel>(`${ARTICLES_ROOT_SEGENT_NAME}/${articleSlug}`) : await getPage<ArticleListContentModel>(`${ARTICLES_ROOT_SEGENT_NAME}`);
+  const page = articleSlug
+    ? await getPage<ArticleContentResponseModel>(`${ARTICLES_ROOT_SEGENT_NAME}/${articleSlug}`)
+    : await getPage<ArticleListContentResponseModel>(`${ARTICLES_ROOT_SEGENT_NAME}`);
 
   return (
     <>

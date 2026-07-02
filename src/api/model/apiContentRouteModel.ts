@@ -5,9 +5,11 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { ProblemDetails } from './problemDetails';
+import type { ApiContentStartItemModel } from './apiContentStartItemModel';
 
-export type HttpValidationProblemDetails = ProblemDetails & {
-  errors?: {[key: string]: string[]};
-  [key: string]: unknown;
-};
+export interface ApiContentRouteModel {
+  path: string;
+  /** @nullable */
+  queryString?: string | null;
+  startItem: ApiContentStartItemModel;
+}

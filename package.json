@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "generate": "node ./node_modules/orval/dist/bin/orval.js"
+    "generate": "orval"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -15,21 +14,24 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "bootstrap": "^5.3.3",
     "html-react-parser": "^5.2.2",
-    "next": "15.2.4",
-    "react": "^19.0.0",
+    "next": "^16.2.9",
+    "react": "^19.2.7",
     "react-bootstrap": "^2.10.9",
-    "react-dom": "^19.0.0",
+    "react-dom": "^19.2.7",
     "react-highlight": "^0.15.0",
     "startbootstrap-clean-blog": "^6.0.9",
-    "swiper": "^11.2.6"
+    "swiper": "^14.0.0"
+  },
+  "overrides": {
+    "postcss": "8.5.10"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "@types/react-highlight": "^0.12.8",
     "dotenv": "^17.4.2",
-    "orval": "^7.7.0",
+    "orval": "^8.19.0",
     "typescript": "^5"
   }
 }
